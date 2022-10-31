@@ -1,0 +1,7 @@
+﻿@model ETicaretProje.Models.Cart
+
+<div class="well well-small">
+    <a id="myCart" href="/Cart/Index">
+    <img src="/Magaza/themes/images/ico-cart.png" alt="cart">@Model.Cartlines.Count Adet Ürün
+    <span class="badge badge-warning pull-right">@Model.ToplamFiyat().ToString("c")</span></a>
+</div>

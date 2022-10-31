@@ -1,0 +1,99 @@
+﻿@model ETicaretProje.Entity.Urun
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<h3>Bu ürünü silmek istediğinizden emin misiniz?</h3>
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Isim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Isim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+
+        <dt>
+            Ürün Adet
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAdet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resim)
+            <img src="~/Content/Resimler/@Model.Resim" width="75" height="50"/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Slider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Slider)
+        </dd>
+
+        <dt>
+            Anasayfada mı?
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnaSayfada_mi)
+        </dd>
+
+        <dt>
+            Onaylı mı?
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Onayli_mi)
+        </dd>
+
+        <dt>
+            Öne Çıkarılmış mı?
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OneCikarilmis_mi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Sil" class="btn btn-danger" />
+        @Html.ActionLink("Ürün Listesine Dön", "Index", null, new { @class = "btn btn-warning" })
+    </div>
+</div>
+    }
+</div>

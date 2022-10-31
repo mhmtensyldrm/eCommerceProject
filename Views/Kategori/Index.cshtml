@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ETicaretProje.Entity.Kategori>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        
+        <!-- /.card -->
+
+        <div class="card">
+
+            <!-- /.card-header -->
+            <div class="card-body">
+
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Kategori Adı</th>
+                            <th>Açıklama</th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Isim)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Aciklama)
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", new { id = item.Id })"><i class="fa fa-fw fa-edit"></i>Düzenle</a>
+                                    <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", new { id = item.Id })"><i class="fa fa-fw fa-trash"></i>Sil</a>
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Kategori Adı</th>
+                            <th>Açıklama</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- /.card-body -->
+            <a class="btn btn-primary btn-block" href="@Url.Action("Create")">Kategori Ekle</a>
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.col -->
+</div>
+
+

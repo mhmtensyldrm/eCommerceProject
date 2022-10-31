@@ -1,0 +1,99 @@
+﻿@model ETicaretProje.Entity.Urun
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Urun</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategori.Isim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategori.Isim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Isim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Isim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAdet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAdet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Slider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Slider)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnaSayfada_mi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnaSayfada_mi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Onayli_mi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Onayli_mi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OneCikarilmis_mi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OneCikarilmis_mi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

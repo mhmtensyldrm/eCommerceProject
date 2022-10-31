@@ -1,0 +1,11 @@
+﻿@using ETicaretProje.Models
+@model IEnumerable<KategoriModel>
+
+<li><a href="/Home/Product">TÜM ÜRÜNLER</a></li>
+
+@foreach (var item in Model)
+{
+    <li><a href="/Home/UrunList/@item.Id">@item.Isim [@item.UrunSayisi]</a></li>
+}
+
+

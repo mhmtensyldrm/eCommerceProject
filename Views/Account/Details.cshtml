@@ -1,0 +1,93 @@
+﻿@model ETicaretProje.Models.OrderDetailsModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar ================================================== -->
+            <div id="sidebar" class="span3">
+                @Html.Action("Summary", "Cart")
+                <ul id="sideManu" class="nav nav-tabs nav-stacked">
+                    @Html.Action("_KategoriList", "Kategori")
+                </ul>
+
+                @Html.Action("PopulerUrunList", "Home")
+            </div>
+            <!-- Sidebar end=============================================== -->
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="/Home/Index">Home</a> <span class="divider">/</span></li>
+                    <li class="active">Products Compairsition</li>
+                </ul>
+                <h3>Sipariş Detay</h3>
+                <hr class="soft" />
+
+                <table id="compairTbl" class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Sipariş Durumu</td>
+                            <td>@Model.OrderState</td>
+                        </tr>
+                        <tr>
+                            <td>Sipariş Id</td>
+                            <td>@Model.OrderId</td>
+                        </tr>
+                        <tr>
+                            <td>Sipariş Numarası</td>
+                            <td>@Model.OrderNumber</td>
+                        </tr>
+                        <tr>
+                            <td>Toplam Fiyat</td>
+                            <td>@Model.ToplamFiyat (₺)</td>
+                        </tr>
+                        <tr>
+                            <td>Sipariş Tarihi</td>
+                            <td>@Model.OrderDate</td>
+                        </tr>
+                        <tr>
+                            <td>Adres</td>
+                            <td>
+                                @Model.AdresBasligi
+                            <br />
+                            @Model.Mahalle @Model.Adres
+                            <br />
+                            @Model.Ilce/@Model.Sehir @Model.PostaKodu
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table id="compairTbl" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Resim</th>
+                            <th>Ürün Adı</th>
+                            <th>Toplam Fiyat</th>
+                            <th>Ürün Adet</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Orderlines)
+                        {
+                            <tr>
+                                <td><img src="~/Content/Resimler/@item.Resim" height="75" width="50"/></td>
+                                <td>@item.UrunIsmi</td>
+                                <td>@item.Fiyat ₺</td>
+                                <td>@item.Adet</td>
+                                <td>
+                                    <a href="/Home/ProductDetails/@item.UrunId" class="btn btn-primary" target="_blank">Ürün Detay</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
